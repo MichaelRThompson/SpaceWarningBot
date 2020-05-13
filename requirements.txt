@@ -1,0 +1,4 @@
+requests
+tweepy
+pillow
+google-cloud-storage
