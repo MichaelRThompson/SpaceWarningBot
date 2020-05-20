@@ -35,7 +35,8 @@ def post_warnings(dummy):
         full_text = r.text
         separated_text = full_text.split("//")
         
-        separated_text[0] = separated_text[0].split('\r\n\r\n')[-1]
+        # End of line character split written for Linux
+        separated_text[0] = "\n".join(separated_text[0].split('\n')[14:])
         
         for msg in separated_text:
             if "SPACE" in msg or "MISSILE" in msg or "ROCKET" in msg:
